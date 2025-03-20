@@ -6,7 +6,7 @@ from pymongo import MongoClient
 
 class Departments:
     def __init__(self):
-        self.client = MongoClient("mongodb://localhost:27017/")
+        self.client = MongoClient(st.secrets['database']['clientLink'])
         self.DepartmentsDB = self.client["DepartmentsDB"]
         self.DepartmentsCollection = self.DepartmentsDB["Departments"]
         self.roomsDB = self.client["RoomsDB"]
