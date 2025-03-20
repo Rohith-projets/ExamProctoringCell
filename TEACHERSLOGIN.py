@@ -12,7 +12,7 @@ if 'invigilator' not in st.session_state:
 class Login:
     def __init__(self):
         # MongoDB connection
-        self.client = MongoClient("mongodb://localhost:27017/")
+        self.client = MongoClient(st.secrets['database']['clientLink'])
         self.scheduledDB = self.client["ScheduledExams"]
         self.studentsCollection = self.client["StudentsDB"]["StudentsCollection"]
         self.teachersCollection = self.client["TeachersDB"]["TeachersCollection"]
