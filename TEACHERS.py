@@ -6,7 +6,7 @@ import pandas as pd
 from bson.binary import Binary
 class Teachers:
     def __init__(self):
-        self.client = MongoClient("mongodb://localhost:27017/")
+        self.client = MongoClient(st.secrets['database']['clientLink'])
         self.TeachersDB = self.client["TeachersDB"]
         self.teachersCollection = self.TeachersDB["TeachersCollection"]
     def __del__(self):
