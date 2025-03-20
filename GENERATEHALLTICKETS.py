@@ -10,7 +10,7 @@ import qrcode
 
 class GenerateHallTickets:
     def __init__(self):
-        self.client = pymongo.MongoClient("mongodb://localhost:27017/")
+        self.client = pymongo.MongoClient(st.secrets['database']['clientLink'])
         self.scheduledDB = self.client["ScheduledExams"]
         self.studentsDB = self.client["StudentsDB"]
         self.studentsCollection = self.studentsDB["StudentsCollection"]
