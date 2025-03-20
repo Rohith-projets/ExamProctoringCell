@@ -7,7 +7,7 @@ from PIL import *
 class Schedule:
     def __init__(self):
         # Database connections
-        self.client = MongoClient("mongodb://localhost:27017/")
+        self.client = MongoClient(st.secrets['database']['clientLink'])
         self.scheduledDB = self.client["ScheduledExams"]
         self.studentsDB = self.client["StudentsDB"]
         self.studentsCollection = self.studentsDB["StudentsCollection"]
