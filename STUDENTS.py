@@ -8,7 +8,7 @@ from bson import Binary
 from io import BytesIO
 class Students:
     def __init__(self):
-        self.client = MongoClient("mongodb://localhost:27017/")
+        self.client = MongoClient(st.secrets['database']['clientLink'])
         self.studentsDB = self.client["StudentsDB"]
         self.studentsCollection = self.studentsDB["StudentsCollection"]
         self.client1 = MongoClient("mongodb+srv://kr587925:Palyam25.in@cluster7.gxpko.mongodb.net/?retryWrites=true&w=majority&appName=CLUSTER7")
